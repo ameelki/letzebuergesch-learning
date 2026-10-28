@@ -4,385 +4,275 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lëtzebuergesch Akademie</title>
+<meta name="theme-color" content="#6855d9">
+<title>Lëtzebuergesch Akademie 🇱🇺</title>
 <style>
-:root {
-  --purple:#6855d9;
-  --blue:#e8f5ff;
-  --green:#d8f9e5;
-  --pink:#ffe4f0;
-  --ink:#27324b;
-}
+:root{--purple:#6855d9;--ink:#27324b;--green:#d8f9e5;--pink:#ffe4f0}
 *{box-sizing:border-box}
-body{
-  margin:0;font-family:Arial,sans-serif;color:var(--ink);
-  background:linear-gradient(135deg,#e2f6ff,#f2e7ff,#fff1df);
-}
-header{
-  padding:35px 20px;text-align:center;color:white;
-  background:linear-gradient(120deg,#6151d5,#a16be8);
-}
-header h1{font-size:clamp(2rem,5vw,3.2rem);margin:10px}
+body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:linear-gradient(135deg,#e2f6ff,#f2e7ff,#fff1df)}
+header{padding:30px 16px;text-align:center;color:white;background:linear-gradient(120deg,#6151d5,#a16be8)}
+header h1{font-size:clamp(2rem,5vw,3rem);margin:10px}
 header p{line-height:1.6}
-.mascot{font-size:65px;animation:bounce 2s infinite}
-@keyframes bounce{50%{transform:translateY(-10px) rotate(4deg)}}
-nav{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:9px;
-  padding:15px;background:white;position:sticky;top:0;z-index:5;
-  box-shadow:0 3px 15px #3331
-}
-button{
-  border:0;border-radius:12px;padding:12px 16px;
-  font-size:1rem;font-weight:bold;cursor:pointer;
-  transition:transform .2s,background .2s;
-}
+.mascot{font-size:60px;animation:bounce 2s infinite}
+@keyframes bounce{50%{transform:translateY(-8px)}}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:12px;background:white;position:sticky;top:0;z-index:5;box-shadow:0 3px 15px #3331}
+button{border:0;border-radius:12px;padding:12px 15px;font-size:1rem;font-weight:bold;cursor:pointer;transition:.2s}
 button:hover{transform:translateY(-2px)}
 nav button,.primary{background:var(--purple);color:white}
 .secondary{background:#e9e5ff;color:#5140ad}
-main{max-width:1050px;margin:auto;padding:20px}
-.panel{
-  background:white;padding:24px;border-radius:22px;margin-bottom:20px;
-  box-shadow:0 8px 25px #3331;
-}
+main{max-width:1050px;margin:auto;padding:18px}
+.panel{background:white;padding:22px;border-radius:22px;margin-bottom:20px;box-shadow:0 8px 25px #3331}
 h2{color:#5747bf}
 .muted{color:#69758b;line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.card{
-  text-align:left;background:#faf8ff;border:2px solid #e9e3ff;
-  border-radius:18px;padding:18px;min-height:145px;color:var(--ink)
-}
-.card .emoji{font-size:2.2rem;display:block;margin-bottom:8px}
-.card:hover{border-color:#a99af8}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{text-align:left;background:#faf8ff;border:2px solid #e9e3ff;border-radius:18px;padding:17px;min-height:140px;color:var(--ink)}
+.emoji{font-size:2.2rem;display:block;margin-bottom:8px}
 .hidden{display:none!important}
 .words{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.word{
-  background:#f5f3ff;padding:14px;border-radius:13px;
-  display:flex;justify-content:space-between;align-items:center;gap:8px
-}
+.word{background:#f5f3ff;padding:12px;border-radius:13px;display:flex;justify-content:space-between;align-items:center;gap:8px}
 .word button{padding:8px;background:#e1f5ff}
-.quiz{
-  background:#f8f6ff;padding:20px;border-radius:18px;margin-top:18px
-}
-.question{font-size:1.3rem;font-weight:bold;line-height:1.5;margin:20px 0}
+.quiz{background:#f8f6ff;padding:18px;border-radius:18px;margin-top:18px}
+.question{font-size:1.25rem;font-weight:bold;line-height:1.5;margin:20px 0}
 .answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.answer{
-  text-align:left;background:white;border:2px solid #e3def9;
-  color:var(--ink)
-}
-.answer.correct{background:#d8f9e5;border-color:#38ad71}
+.answer{text-align:left;background:white;border:2px solid #e3def9;color:var(--ink)}
+.answer.correct{background:var(--green);border-color:#38ad71}
 .answer.wrong{background:#ffe0e0;border-color:#e45b5b}
 .answer:disabled{cursor:default}
 .feedback{padding:13px;border-radius:12px;margin-top:14px;line-height:1.6}
-.good{background:#d8f9e5}.bad{background:#fff0d9}
-.progress{height:12px;background:#eee;border-radius:20px;overflow:hidden}
-.progress div{height:100%;background:#7660e8;width:0;transition:width .4s}
+.good{background:var(--green)}.bad{background:#fff0d9}
+.progress{height:12px;background:#eee;border-radius:20px;overflow:hidden;margin:12px 0}
+.progress div{height:100%;background:#7660e8;width:0;transition:width .3s}
 .stats{display:flex;gap:12px;flex-wrap:wrap}
-.stat{background:#f3f0ff;padding:15px;border-radius:13px;flex:1;min-width:120px}
-.stat strong{font-size:1.5rem;color:#5946c5;display:block}
+.stat{background:#f3f0ff;padding:14px;border-radius:13px;flex:1;min-width:110px}
+.stat strong{font-size:1.4rem;color:#5946c5;display:block}
 footer{text-align:center;padding:25px;color:#687086}
-@media(max-width:650px){
- .grid{grid-template-columns:1fr}
- .words,.answers{grid-template-columns:1fr}
- .panel{padding:17px}
-}
-@media(prefers-reduced-motion:reduce){
- *,*:before,*:after{animation:none!important;transition:none!important}
-}
+#soundStatus{font-size:.9rem;line-height:1.5}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.words,.answers{grid-template-columns:1fr}.panel{padding:16px}nav button{padding:10px;font-size:.9rem}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-
 <header>
-  <div class="mascot">🦊 📚</div>
-  <h1>Moien a wëllkomm!</h1>
-  <p>
-    Léiert Lëtzebuergesch mat Spaass!<br>
-    Lauschtert, schwätzt, übt a sammelt Stären.
-  </p>
-  <p>🇱🇺 Fir Kanner an Ufänger</p>
+<div class="mascot">🦊 📚</div>
+<h1>Moien a wëllkomm!</h1>
+<p>Léiert Lëtzebuergesch mat Spaass!<br>Lauschtert, schwätzt, übt a sammelt Stären.</p>
+<p>🇱🇺 Fir Kanner an Ufänger</p>
 </header>
 
 <nav>
-  <button onclick="showPage('home')">🏡 Start</button>
-  <button onclick="showPage('courses')">📚 Coursen</button>
-  <button onclick="showPage('vocabulary')">🗣️ Wierder</button>
-  <button onclick="startQuiz('quiz')">🎯 Quiz</button>
-  <button onclick="startQuiz('test')">🏆 Ofschlosstest</button>
+<button onclick="showPage('home')">🏡 Start</button>
+<button onclick="showPage('courses')">📚 Coursen</button>
+<button onclick="showPage('vocabulary')">🗣️ Wierder</button>
+<button onclick="startQuiz('quiz')">🎯 Quiz</button>
+<button onclick="startQuiz('test')">🏆 Ofschlosstest</button>
 </nav>
 
 <main>
-
 <section id="home" class="panel page">
-  <h2>Wëllkomm an der Lëtzebuergesch Akademie!</h2>
-  <p class="muted">
-    Hei léiers du Lëtzebuergesch Schrëtt fir Schrëtt.
-    Lauschter d'Wierder, léier nei Ausdréck a maach mat bei de Quizzen.
-  </p>
-  <div class="stats">
-    <div class="stat"><strong id="stars">⭐ 0</strong>Stären</div>
-    <div class="stat"><strong id="completed">0 / 8</strong>Coursen</div>
-    <div class="stat"><strong id="best">—</strong>Bescht Resultat</div>
-  </div>
-  <h2>Wielt däin nächste Cours!</h2>
-  <div class="grid" id="homeCourses"></div>
+<h2>Wëllkomm an der Lëtzebuergesch Akademie!</h2>
+<p class="muted">Hei léiers du Lëtzebuergesch Schrëtt fir Schrëtt. Lauschter d'Wierder, léier nei Ausdréck a maach mat bei de Quizzen.</p>
+<div class="stats">
+<div class="stat"><strong id="stars">⭐ 0</strong>Stären</div>
+<div class="stat"><strong id="completed">0 / 8</strong> Coursen</div>
+<div class="stat"><strong id="best">—</strong>Bescht Resultat</div>
+</div>
+<h2>Wielt däin nächste Cours!</h2>
+<div class="grid" id="homeCourses"></div>
 </section>
 
 <section id="courses" class="panel page hidden">
-  <h2>📚 Eis Coursen</h2>
-  <p class="muted">Wielt en Thema a léiert nei Wierder a Sätz.</p>
-  <div class="grid" id="allCourses"></div>
-  <div id="courseContent" class="hidden"></div>
+<h2>📚 Eis Coursen</h2>
+<p class="muted">Wielt en Thema a léiert nei Wierder a Sätz.</p>
+<div class="grid" id="allCourses"></div>
+<div id="courseContent" class="hidden"></div>
 </section>
 
 <section id="vocabulary" class="panel page hidden">
-  <h2>🗣️ Mäi Wierderbuch</h2>
-  <p class="muted">Klickt op de Lautsprecher, fir e Wuert ze héieren.</p>
-  <div class="words" id="dictionary"></div>
+<h2>🗣️ Mäi Wierderbuch</h2>
+<p class="muted">Klickt op de Lautsprecher, fir e Wuert ze héieren.</p>
+<p id="soundStatus" class="muted">Tippt op 🔊 fir d'Audiofunktioun ze testen.</p>
+<button class="secondary" onclick="speak('Moien! Wéi geet et dir?')">🔊 Audio testen</button>
+<div class="words" id="dictionary"></div>
 </section>
 
 <section id="quiz" class="panel page hidden">
-  <h2>🎯 De klenge Quiz</h2>
-  <p class="muted">Zéng Froen iwwer dat, wat s du geléiert hues.</p>
-  <div class="quiz" id="quizBox">
-    <div class="stats">
-      <div class="stat"><strong id="counter">1 / 10</strong>Fro</div>
-      <div class="stat"><strong id="points">⭐ 0</strong>Punkten</div>
-    </div>
-    <div class="progress"><div id="bar"></div></div>
-    <div id="question" class="question"></div>
-    <div id="answers" class="answers"></div>
-    <div id="feedback" class="hidden feedback"></div>
-    <p><button id="next" class="primary" disabled>Weider ➜</button></p>
-  </div>
-  <div id="quizResult" class="hidden"></div>
+<h2>🎯 De klenge Quiz</h2>
+<p class="muted">Beäntwert d'Froen a sammelt Punkten!</p>
+<div class="quiz" id="quizBox">
+<div class="stats">
+<div class="stat"><strong id="counter">1 / 10</strong>Fro</div>
+<div class="stat"><strong id="points">⭐ 0</strong>Punkten</div>
+</div>
+<div class="progress"><div id="bar"></div></div>
+<div id="question" class="question"></div>
+<div id="answers" class="answers"></div>
+<div id="feedback" class="hidden feedback"></div>
+<p><button id="next" class="primary" disabled>Weider ➜</button></p>
+</div>
+<div id="quizResult" class="hidden"></div>
 </section>
 
 <section id="test" class="panel page hidden">
-  <h2>🏆 Mäi groussen Ofschlosstest</h2>
-  <p class="muted">
-    Test däi Wëssen iwwer Begréissungen, Zuelen, Faarwen,
-    Famill, Déieren, Iessen a kleng Gespréicher.
-  </p>
-  <button class="primary" onclick="startQuiz('test')">Test ufänken 🚀</button>
-  <div id="testIntro" class="muted"></div>
+<h2>🏆 Mäi groussen Ofschlosstest</h2>
+<p class="muted">Test däi Wëssen iwwer Begréissungen, Zuelen, Faarwen, Famill, Déieren an Iessen.</p>
+<button class="primary" onclick="startQuiz('test')">Test ufänken 🚀</button>
 </section>
-
 </main>
 
-<footer>
-  🇱🇺 Lëtzebuergesch léieren — Schrëtt fir Schrëtt! 🌟
-</footer>
+<footer>🇱🇺 Lëtzebuergesch léieren — Schrëtt fir Schrëtt! 🌟</footer>
 
 <script>
-const courses = [
-{
- title:"Begréissungen",icon:"👋",
- description:"Moien soen an Äddi soen.",
- words:[
-  ["Moien","Bonjour / Salut"],
-  ["Gudde Moien","Bonjour (le matin)"],
-  ["Gudde Mëtteg","Bon après-midi"],
-  ["Gudde Owend","Bonsoir"],
-  ["Äddi","Au revoir"],
-  ["Wéi geet et?","Comment ça va ?"],
-  ["Et geet gutt.","Ça va bien."],
-  ["Merci","Merci"],
-  ["Jo","Oui"],
-  ["Nee","Non"]
- ],
- sentence:"Moien! Wéi geet et dir? Et geet gutt, merci!"
-},
-{
- title:"Zuelen",icon:"🔢",
- description:"Ziele vun eent bis zéng.",
- words:[
-  ["eent","un"],["zwee","deux"],["dräi","trois"],
-  ["véier","quatre"],["fënnef","cinq"],["sechs","six"],
-  ["siwen","sept"],["aacht","huit"],["néng","neuf"],["zéng","dix"]
- ],
- sentence:"Eent, zwee, dräi, véier, fënnef!"
-},
-{
- title:"Faarwen",icon:"🎨",
- description:"D'Faarwe ronderëm eis.",
- words:[
-  ["rout","rouge"],["blo","bleu"],["giel","jaune"],
-  ["gréng","vert"],["schwaarz","noir"],["wäiss","blanc"],
-  ["rosa","rose"],["orange","orange"]
- ],
- sentence:"D'Sonn ass giel. D'Blat ass gréng."
-},
-{
- title:"Meng Famill",icon:"👨‍👩‍👧",
- description:"Iwwer d'Famill schwätzen.",
- words:[
-  ["d'Mamm","la mère"],["de Papp","le père"],
-  ["d'Schwëster","la sœur"],["de Brudder","le frère"],
-  ["d'Bomi","la grand-mère"],["de Bopa","le grand-père"],
-  ["d'Famill","la famille"]
- ],
- sentence:"Dat ass meng Famill."
-},
-{
- title:"Déieren",icon:"🐶",
- description:"D'Nimm vun Déieren léieren.",
- words:[
-  ["den Hond","le chien"],["d'Kaz","le chat"],
-  ["de Vull","l'oiseau"],["d'Päerd","le cheval"],
-  ["de Fësch","le poisson"],["d'Kanéngchen","le lapin"],
-  ["d'Maus","la souris"]
- ],
- sentence:"Den Hond an d'Kaz si kleng Déieren."
-},
-{
- title:"Iessen an Drénken",icon:"🍎",
- description:"Iessen, Gedrénks an Uebst.",
- words:[
-  ["d'Waasser","l'eau"],["d'Mëllech","le lait"],
-  ["d'Brout","le pain"],["den Apel","la pomme"],
-  ["de Kéis","le fromage"],["d'Banann","la banane"],
-  ["Ech hunn Honger.","J'ai faim."],
-  ["Ech hunn Duuscht.","J'ai soif."]
- ],
- sentence:"Ech drénke Waasser an ech iessen en Apel."
-},
-{
- title:"An der Schoul",icon:"🎒",
- description:"Wierder aus dem Schouldag.",
- words:[
-  ["d'Schoul","l'école"],["den Enseignant","l'enseignant"],
-  ["d'Buch","le livre"],["de Bic","le stylo"],
-  ["den Dësch","la table"],["de Stull","la chaise"],
-  ["d'Pabeier","le papier"]
- ],
- sentence:"Ech ginn an d'Schoul."
-},
-{
- title:"Mäi Kierper",icon:"🧒",
- description:"De Kapp, d'Hänn an de Kierper.",
- words:[
-  ["de Kapp","la tête"],["d'Aen","les yeux"],
-  ["d'Nues","le nez"],["de Mond","la bouche"],
-  ["d'Hand","la main"],["de Fouss","le pied"],
-  ["d'Ouer","l'oreille"]
- ],
- sentence:"Ech hunn zwee Aen an zwou Hänn."
+const courses=[
+{title:"Begréissungen",icon:"👋",description:"Moien soen an Äddi soen.",words:[["Moien","Bonjour / Salut"],["Gudde Moien","Bonjour le matin"],["Gudde Mëtteg","Bon après-midi"],["Gudde Owend","Bonsoir"],["Äddi","Au revoir"],["Wéi geet et?","Comment ça va ?"],["Et geet gutt.","Ça va bien."],["Merci","Merci"],["Jo","Oui"],["Nee","Non"]],sentence:"Moien! Wéi geet et dir? Et geet gutt, merci!"},
+{title:"Zuelen",icon:"🔢",description:"Ziele vun eent bis zéng.",words:[["eent","un"],["zwee","deux"],["dräi","trois"],["véier","quatre"],["fënnef","cinq"],["sechs","six"],["siwen","sept"],["aacht","huit"],["néng","neuf"],["zéng","dix"]],sentence:"Eent, zwee, dräi, véier, fënnef!"},
+{title:"Faarwen",icon:"🎨",description:"D'Faarwe ronderëm eis.",words:[["rout","rouge"],["blo","bleu"],["giel","jaune"],["gréng","vert"],["schwaarz","noir"],["wäiss","blanc"],["rosa","rose"],["orange","orange"]],sentence:"D'Sonn ass giel. D'Blat ass gréng."},
+{title:"Meng Famill",icon:"👨‍👩‍👧",description:"Iwwer d'Famill schwätzen.",words:[["d'Mamm","la mère"],["de Papp","le père"],["d'Schwëster","la sœur"],["de Brudder","le frère"],["d'Bomi","la grand-mère"],["de Bopa","le grand-père"],["d'Famill","la famille"]],sentence:"Dat ass meng Famill."},
+{title:"Déieren",icon:"🐶",description:"D'Nimm vun Déieren léieren.",words:[["den Hond","le chien"],["d'Kaz","le chat"],["de Vull","l'oiseau"],["d'Päerd","le cheval"],["de Fësch","le poisson"],["d'Kanéngchen","le lapin"],["d'Maus","la souris"]],sentence:"Den Hond an d'Kaz si kleng Déieren."},
+{title:"Iessen an Drénken",icon:"🍎",description:"Iessen, Gedrénks an Uebst.",words:[["d'Waasser","l'eau"],["d'Mëllech","le lait"],["d'Brout","le pain"],["den Apel","la pomme"],["de Kéis","le fromage"],["d'Banann","la banane"],["Ech hunn Honger.","J'ai faim."],["Ech hunn Duuscht.","J'ai soif."]],sentence:"Ech drénke Waasser an ech iessen en Apel."},
+{title:"An der Schoul",icon:"🎒",description:"Wierder aus dem Schouldag.",words:[["d'Schoul","l'école"],["den Enseignant","l'enseignant"],["d'Buch","le livre"],["de Bic","le stylo"],["den Dësch","la table"],["de Stull","la chaise"],["d'Pabeier","le papier"]],sentence:"Ech ginn an d'Schoul."},
+{title:"Mäi Kierper",icon:"🧒",description:"De Kapp, d'Hänn an de Kierper.",words:[["de Kapp","la tête"],["d'Aen","les yeux"],["d'Nues","le nez"],["de Mond","la bouche"],["d'Hand","la main"],["de Fouss","le pied"],["d'Ouer","l'oreille"]],sentence:"Ech hunn zwee Aen an zwou Hänn."}
+];
+
+const questions=[
+{q:"Wat heescht „Moien“?",o:["Au revoir","Bonjour","Merci","Non"],a:1,e:"Moien heescht Bonjour oder Salut."},
+{q:"Wat heescht „Äddi“?",o:["Bonjour","Oui","Au revoir","Merci"],a:2,e:"Äddi heescht Au revoir."},
+{q:"Wat heescht „zwee“?",o:["Eent","Dräi","Deux","Fënnef"],a:2,e:"Zwee heescht deux."},
+{q:"Wat heescht „giel“?",o:["Bleu","Jaune","Rouge","Vert"],a:1,e:"Giel heescht jaune."},
+{q:"Wat heescht „d'Mamm“?",o:["Le père","La sœur","La mère","Le frère"],a:2,e:"D'Mamm heescht la mère."},
+{q:"Wat heescht „den Hond“?",o:["Le chat","Le chien","L'oiseau","Le cheval"],a:1,e:"Den Hond heescht le chien."},
+{q:"Wat heescht „d'Waasser“?",o:["Le lait","Le pain","L'eau","Le fromage"],a:2,e:"D'Waasser heescht l'eau."},
+{q:"Wat heescht „aacht“?",o:["Six","Sept","Huit","Neuf"],a:2,e:"Aacht heescht huit."},
+{q:"Wat heescht „d'Buch“?",o:["Le livre","Le stylo","La table","La chaise"],a:0,e:"D'Buch heescht le livre."},
+{q:"Wat heescht „Wéi geet et?“",o:["Comment ça va ?","Au revoir","Quel âge ?","Où ?"],a:0,e:"Wéi geet et? signifie Comment ça va ?"},
+{q:"Wat heescht „rout“?",o:["Vert","Rouge","Jaune","Blanc"],a:1,e:"Rout heescht rouge."},
+{q:"Wat heescht „de Papp“?",o:["Le père","Le frère","Le grand-père","Le fils"],a:0,e:"De Papp heescht le père."},
+{q:"Wat heescht „d'Kaz“?",o:["Le chien","Le lapin","Le chat","Le poisson"],a:2,e:"D'Kaz heescht le chat."},
+{q:"Wat heescht „Ech hunn Honger“?",o:["J'ai soif","J'ai faim","Je suis fatigué","Je suis heureux"],a:1,e:"Ech hunn Honger heescht J'ai faim."},
+{q:"Wat heescht „gréng“?",o:["Noir","Bleu","Vert","Rose"],a:2,e:"Gréng heescht vert."},
+{q:"Wat heescht „Merci“?",o:["Pardon","Merci","Bonjour","Au revoir"],a:1,e:"Merci heescht merci."},
+{q:"Wat heescht „de Fësch“?",o:["L'oiseau","Le poisson","Le cheval","Le chien"],a:1,e:"De Fësch heescht le poisson."},
+{q:"Wat heescht „Ech hunn Duuscht“?",o:["J'ai faim","J'ai froid","J'ai soif","J'ai chaud"],a:2,e:"Ech hunn Duuscht heescht J'ai soif."},
+{q:"Wat heescht „fënnef“?",o:["Quatre","Cinq","Six","Dix"],a:1,e:"Fënnef heescht cinq."},
+{q:"Wat heescht „d'Schoul“?",o:["La maison","L'école","Le livre","La famille"],a:1,e:"D'Schoul heescht l'école."}
+];
+
+let stars=0,completed=new Set(),best=null,round=[],index=0,score=0,answered=false,mode="quiz";
+
+/* Lecture vocale améliorée pour Safari sur iPhone/iPad.
+   La voix luxembourgeoise n'est pas disponible sur tous les appareils. */
+function speak(text){
+ if(!("speechSynthesis" in window)||!("SpeechSynthesisUtterance" in window)){
+  alert("La lecture vocale n'est pas disponible ici. Essaie d'ouvrir le site dans Safari.");
+  return;
+ }
+ const synth=window.speechSynthesis;
+ synth.cancel();
+ const utterance=new SpeechSynthesisUtterance(String(text));
+ let voices=synth.getVoices();
+ const voice=voices.find(v=>v.lang.toLowerCase().startsWith("lb"))
+  ||voices.find(v=>v.lang.toLowerCase()==="fr-lu")
+  ||voices.find(v=>v.lang.toLowerCase().startsWith("fr"))
+  ||voices.find(v=>v.default)
+  ||voices[0];
+ if(voice){utterance.voice=voice;utterance.lang=voice.lang;}
+ else{utterance.lang="fr-FR";}
+ utterance.rate=0.8;
+ utterance.pitch=1;
+ utterance.volume=1;
+ utterance.onstart=()=>{const s=document.getElementById("soundStatus");if(s)s.textContent="🔊 Lecture en cours…";};
+ utterance.onend=()=>{const s=document.getElementById("soundStatus");if(s)s.textContent="✅ Lecture terminée. Appuie sur 🔊 pour écouter à nouveau.";};
+ utterance.onerror=(event)=>{console.warn("Erreur de synthèse vocale:",event.error);const s=document.getElementById("soundStatus");if(s)s.textContent="Le navigateur n'a pas pu lire ce texte. Vérifie le son et essaie Safari.";};
+ // Important sur iOS : appeler speak directement après le clic de l'utilisateur.
+ synth.resume();
+ synth.speak(utterance);
 }
-];
-
-const questions = [
- {q:"Wat heescht „Moien“?",o:["Au revoir","Bonjour","Merci","Non"],a:1,e:"Moien heescht Bonjour oder Salut."},
- {q:"Wat heescht „Äddi“?",o:["Bonjour","Oui","Au revoir","Merci"],a:2,e:"Äddi heescht Au revoir."},
- {q:"Wat heescht „zwee“?",o:["Eent","Dräi","Zwee","Fënnef"],a:2,e:"Zwee heescht deux."},
- {q:"Wat heescht „giel“?",o:["Blo","Giel","Rout","Gréng"],a:1,e:"Giel heescht jaune."},
- {q:"Wat heescht „d'Mamm“?",o:["Le père","La sœur","La mère","Le frère"],a:2,e:"D'Mamm heescht la mère."},
- {q:"Wat heescht „den Hond“?",o:["Le chat","Le chien","L'oiseau","Le cheval"],a:1,e:"Den Hond heescht le chien."},
- {q:"Wat heescht „d'Waasser“?",o:["Le lait","Le pain","L'eau","Le fromage"],a:2,e:"D'Waasser heescht l'eau."},
- {q:"Wat heescht „aacht“?",o:["Six","Sept","Huit","Neuf"],a:2,e:"Aacht heescht huit."},
- {q:"Wat heescht „d'Buch“?",o:["Le livre","Le stylo","La table","La chaise"],a:0,e:"D'Buch heescht le livre."},
- {q:"Wat heescht „Wéi geet et?“",o:["Comment ça va ?","Au revoir","Quel âge ?","Où ?"],a:0,e:"Wéi geet et? signifie Comment ça va ?"},
- {q:"Wat heescht „rout“?",o:["Vert","Rouge","Jaune","Blanc"],a:1,e:"Rout heescht rouge."},
- {q:"Wat heescht „de Papp“?",o:["Le père","Le frère","Le grand-père","Le fils"],a:0,e:"De Papp heescht le père."},
- {q:"Wat heescht „d'Kaz“?",o:["Le chien","Le lapin","Le chat","Le poisson"],a:2,e:"D'Kaz heescht le chat."},
- {q:"Wat heescht „Ech hunn Honger“?",o:["J'ai soif","J'ai faim","Je suis fatigué","Je suis heureux"],a:1,e:"Ech hunn Honger heescht J'ai faim."},
- {q:"Wat heescht „gréng“?",o:["Noir","Bleu","Vert","Rose"],a:2,e:"Gréng heescht vert."},
- {q:"Wat heescht „Merci“?",o:["Pardon","Merci","Bonjour","Au revoir"],a:1,e:"Merci heescht merci."},
- {q:"Wat heescht „de Fësch“?",o:["L'oiseau","Le poisson","Le cheval","Le chien"],a:1,e:"De Fësch heescht le poisson."},
- {q:"Wat heescht „Ech hunn Duuscht“?",o:["J'ai faim","J'ai froid","J'ai soif","J'ai chaud"],a:2,e:"Ech hunn Duuscht heescht J'ai soif."},
- {q:"Wat heescht „fënnef“?",o:["Quatre","Cinq","Six","Dix"],a:1,e:"Fënnef heescht cinq."},
- {q:"Wat heescht „d'Schoul“?",o:["La maison","L'école","Le livre","La famille"],a:1,e:"D'Schoul heescht l'école."}
-];
-
-let stars=0,completed=new Set(),best=null;
-let round=[],index=0,score=0,answered=false,mode="quiz";
 
 function showPage(id){
  document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));
  document.getElementById(id).classList.remove("hidden");
- if("speechSynthesis" in window)speechSynthesis.cancel();
+ if("speechSynthesis" in window)window.speechSynthesis.cancel();
  window.scrollTo({top:0,behavior:"smooth"});
 }
-
-function speak(text){
- if(!("speechSynthesis" in window)){
-  alert("La lecture vocale n'est pas disponible dans ce navigateur.");return;
- }
- speechSynthesis.cancel();
- const u=new SpeechSynthesisUtterance(text);
- u.lang="lb-LU";u.rate=.85;
- const voices=speechSynthesis.getVoices();
- const v=voices.find(x=>x.lang.toLowerCase().startsWith("lb"))
-   ||voices.find(x=>x.lang.toLowerCase().startsWith("fr"));
- if(v)u.voice=v;
- speechSynthesis.speak(u);
-}
-
 function updateStats(){
  document.getElementById("stars").textContent="⭐ "+stars;
  document.getElementById("completed").textContent=completed.size+" / "+courses.length;
  document.getElementById("best").textContent=best===null?"—":best+"%";
 }
-
 function courseCard(c,i){
  const b=document.createElement("button");
  b.className="card";
- b.innerHTML=`<span class="emoji">${c.icon}</span><strong>${c.title}</strong><p>${c.description}</p>${completed.has(i)?"✅ Fäerdeg": "📖 Cours entdecken"}`;
+ const title=document.createElement("strong");
+ title.textContent=c.title;
+ const desc=document.createElement("p");
+ desc.textContent=c.description;
+ const emoji=document.createElement("span");
+ emoji.className="emoji";emoji.textContent=c.icon;
+ const status=document.createElement("span");
+ status.textContent=completed.has(i)?"✅ Fäerdeg":"📖 Cours entdecken";
+ b.append(emoji,title,desc,status);
  b.onclick=()=>openCourse(i);
  return b;
 }
-
 function renderCourses(){
- const home=document.getElementById("homeCourses");
- const all=document.getElementById("allCourses");
+ const home=document.getElementById("homeCourses"),all=document.getElementById("allCourses");
  home.innerHTML="";all.innerHTML="";
  courses.slice(0,3).forEach((c,i)=>home.appendChild(courseCard(c,i)));
  courses.forEach((c,i)=>all.appendChild(courseCard(c,i)));
 }
-
 function openCourse(i){
  showPage("courses");
  const c=courses[i],area=document.getElementById("courseContent");
  area.classList.remove("hidden");
- area.innerHTML=`<div class="quiz">
- <h2>${c.icon} ${c.title}</h2>
- <p>${c.description}</p>
- <div class="words">${c.words.map(w=>`<div class="word"><span><strong>${w[0]}</strong><br><small>${w[1]}</small></span><button onclick="speak(${JSON.stringify(w[0])})">🔊</button></div>`).join("")}</div>
- <h3>💬 E Saz fir ze léieren</h3><p>${c.sentence}</p>
- <button class="secondary" onclick="speak(${JSON.stringify(c.sentence)})">🔊 Lauschteren</button>
- <button class="primary" id="markDone">Ech hunn de Cours fäerdeg ✓</button>
- <button class="secondary" onclick="startQuiz('quiz')">Quiz maachen 🎯</button>
- </div>`;
- document.getElementById("markDone").onclick=()=>{
-  if(!completed.has(i)){completed.add(i);stars+=2;updateStats();renderCourses();}
-  document.getElementById("markDone").textContent="Cours fäerdeg ✓";
- };
+ area.innerHTML="";
+ const box=document.createElement("div");box.className="quiz";
+ const h=document.createElement("h2");h.textContent=c.icon+" "+c.title;
+ const p=document.createElement("p");p.textContent=c.description;
+ const words=document.createElement("div");words.className="words";
+ c.words.forEach(w=>{
+  const row=document.createElement("div");row.className="word";
+  const label=document.createElement("span");
+  const strong=document.createElement("strong");strong.textContent=w[0];
+  const br=document.createElement("br");
+  const small=document.createElement("small");small.textContent=w[1];
+  label.append(strong,br,small);
+  const b=document.createElement("button");b.textContent="🔊";b.setAttribute("aria-label","Écouter "+w[0]);b.onclick=()=>speak(w[0]);
+  row.append(label,b);words.appendChild(row);
+ });
+ const sh=document.createElement("h3");sh.textContent="💬 E Saz fir ze léieren";
+ const sentence=document.createElement("p");sentence.textContent=c.sentence;
+ const listen=document.createElement("button");listen.className="secondary";listen.textContent="🔊 Lauschteren";listen.onclick=()=>speak(c.sentence);
+ const done=document.createElement("button");done.className="primary";done.textContent=completed.has(i)?"Cours fäerdeg ✓":"Ech hunn de Cours fäerdeg ✓";
+ done.onclick=()=>{if(!completed.has(i)){completed.add(i);stars+=2;updateStats();renderCourses();}done.textContent="Cours fäerdeg ✓";};
+ const quiz=document.createElement("button");quiz.className="secondary";quiz.textContent="Quiz maachen 🎯";quiz.onclick=()=>startQuiz("quiz");
+ box.append(h,p,words,sh,sentence,listen,done,quiz);area.appendChild(box);
  area.scrollIntoView({behavior:"smooth"});
 }
-
 function renderDictionary(){
- const all=courses.flatMap(c=>c.words);
- document.getElementById("dictionary").innerHTML=all.map(w=>
- `<div class="word"><span><strong>${w[0]}</strong><br><small>${w[1]}</small></span><button data-word="${encodeURIComponent(w[0])}">🔊</button></div>`
- ).join("");
- document.querySelectorAll("#dictionary [data-word]").forEach(b=>b.onclick=()=>speak(decodeURIComponent(b.dataset.word)));
+ const all=courses.flatMap(c=>c.words),box=document.getElementById("dictionary");
+ box.innerHTML="";
+ all.forEach(w=>{
+  const row=document.createElement("div");row.className="word";
+  const label=document.createElement("span");
+  const strong=document.createElement("strong");strong.textContent=w[0];
+  const br=document.createElement("br"),small=document.createElement("small");small.textContent=w[1];
+  label.append(strong,br,small);
+  const b=document.createElement("button");b.textContent="🔊";b.setAttribute("aria-label","Écouter "+w[0]);b.onclick=()=>speak(w[0]);
+  row.append(label,b);box.appendChild(row);
+ });
 }
-
 function shuffle(arr){
  const a=[...arr];
- for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+ for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
  return a;
 }
-
 function startQuiz(which){
  mode=which;index=0;score=0;answered=false;
  round=shuffle(questions).slice(0,which==="test"?15:10);
  showPage("quiz");
  document.getElementById("quizBox").classList.remove("hidden");
  document.getElementById("quizResult").classList.add("hidden");
- document.getElementById("question").textContent="";
  renderQuestion();
 }
-
 function renderQuestion(){
  const q=round[index];
  document.getElementById("counter").textContent=(index+1)+" / "+round.length;
@@ -390,19 +280,20 @@ function renderQuestion(){
  document.getElementById("bar").style.width=(index/round.length*100)+"%";
  document.getElementById("question").textContent=q.q;
  document.getElementById("feedback").className="hidden";
- document.getElementById("next").disabled=true;
- document.getElementById("next").textContent=index===round.length-1?"Resultat kucken 🏆":"Weider ➜";
+ const next=document.getElementById("next");
+ next.disabled=true;
+ next.textContent=index===round.length-1?"Resultat kucken 🏆":"Weider ➜";
  const box=document.getElementById("answers");box.innerHTML="";
- q.o.forEach((a,i)=>{
+ q.o.forEach((answer,i)=>{
   const b=document.createElement("button");b.className="answer";
-  b.textContent=String.fromCharCode(65+i)+". "+a;
+  b.textContent=String.fromCharCode(65+i)+". "+answer;
   b.onclick=()=>chooseAnswer(i);box.appendChild(b);
  });
  answered=false;
 }
-
 function chooseAnswer(i){
- if(answered)return;answered=true;
+ if(answered)return;
+ answered=true;
  const q=round[index],correct=i===q.a;
  document.querySelectorAll("#answers button").forEach((b,j)=>{
   b.disabled=true;
@@ -416,36 +307,38 @@ function chooseAnswer(i){
  document.getElementById("points").textContent="⭐ "+score;
  document.getElementById("bar").style.width=((index+1)/round.length*100)+"%";
  document.getElementById("next").disabled=false;
- speak(q.e);updateStats();
+ updateStats();
+ speak(q.e);
 }
-
 document.getElementById("next").onclick=()=>{
  if(!answered)return;
  index++;
  if(index<round.length)renderQuestion();
  else finishQuiz();
 };
-
 function finishQuiz(){
  document.getElementById("quizBox").classList.add("hidden");
  const pct=Math.round(score/round.length*100);
  if(best===null||pct>best)best=pct;
  updateStats();
- const result=document.getElementById("quizResult");
- result.classList.remove("hidden");
- result.innerHTML=`<div class="quiz" style="text-align:center">
- <div style="font-size:4rem">${pct>=80?"🏆":"🌟"}</div>
- <h2>${mode==="test"?"Ofschlosstest fäerdeg!":"Quiz fäerdeg!"}</h2>
- <p style="font-size:2rem"><strong>${score} / ${round.length}</strong></p>
- <p>${pct}% — ${pct>=80?"Fantastesch! Du hues dat super gemaach!":pct>=60?"Ganz gutt! Weider esou!":"Gutt probéiert! Léier nach eng Kéier a probéier et nach emol."}</p>
- <button class="primary" onclick="startQuiz('${mode}')">Nach eng Kéier 🔄</button>
- <button class="secondary" onclick="showPage('courses')">Coursen kucken 📚</button>
- <h3>Äntwerten</h3>
- ${round.map((q,i)=>`<p style="text-align:left">${i+1}. ${q.q}<br><strong>${q.o[q.a]}</strong></p>`).join("")}
- </div>`;
+ const result=document.getElementById("quizResult");result.classList.remove("hidden");result.innerHTML="";
+ const box=document.createElement("div");box.className="quiz";box.style.textAlign="center";
+ const emoji=document.createElement("div");emoji.style.fontSize="4rem";emoji.textContent=pct>=80?"🏆":"🌟";
+ const h=document.createElement("h2");h.textContent=mode==="test"?"Ofschlosstest fäerdeg!":"Quiz fäerdeg!";
+ const points=document.createElement("p");points.style.fontSize="2rem";points.textContent=score+" / "+round.length;
+ const message=document.createElement("p");
+ message.textContent=pct+"% — "+(pct>=80?"Fantastesch! Du hues dat super gemaach!":pct>=60?"Ganz gutt! Weider esou!":"Gutt probéiert! Léier nach eng Kéier a probéier et nach emol.");
+ const retry=document.createElement("button");retry.className="primary";retry.textContent="Nach eng Kéier 🔄";retry.onclick=()=>startQuiz(mode);
+ const back=document.createElement("button");back.className="secondary";back.textContent="Coursen kucken 📚";back.onclick=()=>showPage("courses");
+ const answersTitle=document.createElement("h3");answersTitle.textContent="Äntwerten";
+ box.append(emoji,h,points,message,retry,back,answersTitle);
+ round.forEach((q,i)=>{
+  const p=document.createElement("p");p.style.textAlign="left";
+  p.textContent=(i+1)+". "+q.q+" — "+q.o[q.a];box.appendChild(p);
+ });
+ result.appendChild(box);
  speak("De Quiz ass fäerdeg. Du hues "+score+" vu "+round.length+" Punkten.");
 }
-
 renderCourses();
 renderDictionary();
 updateStats();
